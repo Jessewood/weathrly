@@ -1,11 +1,22 @@
-import React from 'react'
+import React, { Component } from 'react'
+import Welcome from './Welcome'
 import './App.scss'
 
-const App = () => {
-  return (
-    <div> Hello
-    </div>
-    )
+export default class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      welcome: true
+    }
+  }
+  render() {
+    return (
+      <div>
+        <div className="welcome">
+          <Welcome />
+        </div>
+      </div>
+      )
+  }
 }
 
-export default App
