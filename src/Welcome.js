@@ -4,11 +4,11 @@ import Search from './Search'
 
 const Welcome = () => {
   return (
-    <div>
-      <h1>Weathrly</h1>
+    <div  className="welcome">
+      <h1 className="welcome-title">Weathrly</h1>
       <Search />
     </div>
-    )
+  )
 }
 
 export default Welcome
