@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import './Search.scss'
 
 export default class Search extends Component {
   constructor() {
@@ -9,9 +10,12 @@ export default class Search extends Component {
   }
   render() {
     return (
-      <div>
-        <input placeholder={this.state.placeholder} />
-        <button onClick={() => {console.log('clicked')}}>Search</button>
+      <div className="search-wrapper">
+        <div className="input-wrapper">
+          <img src="../public/if_location_pin.svg" className="search-icon" />
+          <input className="search-input" placeholder={this.state.placeholder} />
+        </div>
+        <button className="search-button" onClick={() => {console.log('clicked')}}>Search</button>
       </div>
       )
   }

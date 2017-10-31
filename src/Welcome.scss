@@ -1,11 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Righteous');
+
 .welcome {
-  
+  background: teal;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.hide {
-  display: none;
+.welcome-title {
+  color: #fff;
+  font-size: 100pt;
+  margin: 0px 0px 90px 0px;
+  font-family: 'Righteous', sans-serif;
+  letter-spacing: .1em;
 }
 
-input {
-  width: 400px;
-}
+
+
