@@ -28,4 +28,4 @@ build/Release
 node_modules
 
 #API information
-src/.api.js
+.api.js
