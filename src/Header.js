@@ -4,11 +4,11 @@ import './Header.scss'
 
 const Header = () => {
   return(
-   <div className='header'>
-    <h1>Weathrly</h1>
-    <Search />
-  </div>
-    )
+    <div className='header'>
+      <h1>Weathrly</h1>
+      <Search />
+    </div>
+  )
 } 
 
 export default Header
