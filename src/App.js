@@ -12,7 +12,9 @@ export default class App extends Component {
     super()
     this.state = {
       welcome: true,
-      data: null
+      currentData: null,
+      sevenHourData: null,
+      tenDayData: null
     }
     this.citySearch = this.citySearch.bind(this)
   }
@@ -21,20 +23,26 @@ export default class App extends Component {
     this.setState({
       welcome: false
     })
-    console.log('clicked')
-    console.log(this.state)
   }
 
   componentDidMount() {
   fetch(`http://api.wunderground.com/api/${key}/conditions/q/CO/Denver.json`)
   .then( data => data.json())
   .then( data => {
-    const myData = {
+    const currentData = {
       location: data.current_observation.display_location.full
     };
-    this.setState({data: myData});
+    const sevenHourData = {
+      location: data.current_observation.display_location.full
+    };
+    const tenDayData = {
+      location: data.current_observation.display_location.full
+    };
+    this.setState({currentData: currentData,
+                    sevenHourData: sevenHourData,
+                    tenDayData: tenDayData
+      });
     console.log(this.state)
-    console.log(this.citySearch)
     })
   }
 
@@ -43,7 +51,7 @@ export default class App extends Component {
       <div>
       {
         this.state.welcome &&
-        <Welcome searchFunction={this.citySearch} />
+        <Welcome citySearch={this.citySearch} />
       }
       {
         !this.state.welcome &&

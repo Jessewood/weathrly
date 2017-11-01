@@ -6,7 +6,7 @@ const Welcome = (props) => {
   return (
     <div  className="welcome">
       <h1 className="welcome-title">Weathrly</h1>
-      <Search citySearch={props.searchFunction} />
+      <Search citySearch={props.citySearch} />
     </div>
   )
 }
