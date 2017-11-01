@@ -1,22 +1,16 @@
 import React, { Component } from 'react';
 import './Search.scss'
 
-export default class Search extends Component {
-  constructor() {
-    super();
-    this.state = {
-      placeholder: 'Choose a city'
-    }
-  }
-  render() {
-    return (
-      <div className="search-wrapper">
-        <div className="input-wrapper">
-          <img src="../public/if_location_pin.svg" className="search-icon" />
-          <input className="search-input" placeholder={this.state.placeholder} />
-        </div>
-        <button className="search-button" onClick={() => {console.log('clicked')}}>Search</button>
+const Search = (props) => {
+  return (
+    <div className="search-wrapper">
+      <div className="input-wrapper">
+        <img src="../public/if_location_pin.svg" className="search-icon" />
+        <input className="search-input" placeholder='Choose a city...' />
       </div>
-      )
-  }
+      <button className="search-button" onClick={() => {props.searchFunction}}>Search</button>
+    </div>
+  )
 }
+
+export default Search
