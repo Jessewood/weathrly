@@ -16,11 +16,13 @@ export default class TenDayForecast extends React.Component {
     return(
       <div className='ten-day-card-wrapper'>
         <h2>10 Day Forecast </h2>
+        <div className='card-wrapper'>
         {
           this.state.list.map((card) => {
             return <Card />
           }) 
         }
+        </div>
       </div>
     )
   }
