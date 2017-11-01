@@ -14,6 +14,7 @@ export default class App extends Component {
       welcome: false
     }
   }
+
   render() {
     return (
       <div>
@@ -29,11 +30,13 @@ export default class App extends Component {
             <CurrentWeather />
             <SevenHourForecast />
           </div>
-          <TenDayForecast />
+          <div className='ten-day-wrapper'>
+            <TenDayForecast />
+          </div>
         </div>
       }
       </div>
-      )
+    )
   }
 }
 
