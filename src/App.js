@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import Header from './Header'
 import Welcome from './Welcome'
-import Search from './Search'
 import CurrentWeather from './CurrentWeather'
 import SevenHourForecast from './SevenHourForecast'
 import TenDayForecast from './TenDayForecast'
