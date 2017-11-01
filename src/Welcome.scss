@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Righteous');
+@import 'variable';
 
 .welcome {
   background: teal;
@@ -10,10 +10,10 @@
 }
 
 .welcome-title {
-  color: #fff;
+  color: $title-color;
   font-size: 100pt;
   margin: 0px 0px 90px 0px;
-  font-family: 'Righteous', sans-serif;
+  font-family: $title-font;
   letter-spacing: .1em;
 }
 
