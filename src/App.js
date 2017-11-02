@@ -5,62 +5,61 @@ import CurrentWeather from './CurrentWeather'
 import SevenHourForecast from './SevenHourForecast'
 import TenDayForecast from './TenDayForecast'
 import key from '../.api.js'
-import filterData from './cleanData'
+import filteredData from './cleanData'
 import './App.scss'
 
 export default class App extends Component {
   constructor() {
     super()
+    
+    const currentCity = JSON.parse(localStorage.getItem("currentCity"))
+    
     this.state = {
-      welcome: true,
-      location: null,
+      location: currentCity || '',
       currentForecast: {},
-      sevenDayForecast: [],
+      sevenHourForecast: [],
       tenDayForecast: []
-
     }
+    
     this.citySearch = this.citySearch.bind(this)
   }
 
   citySearch(location) {
-    console.log(location)
     this.setState({
-      welcome: false,
       location: location
     })
     let [city, state] = location.split(/,\s+/)
     fetch(`http://api.wunderground.com/api/${key}/forecast10day/hourly/conditions/q/${state}/${city}.json`)
       .then( data => data.json())
       .then( data => {
-        const cleanData = filterData(data)
+        const cleanData = filteredData(data)
 
         this.setState(cleanData)
-        console.log(this.state.location)
+        /*console.log(this.state.location)*/
+        this.sendToStorage(this.state.location) 
         })
-      localStorage.setItem("currentCity", JSON.stringify(this.state.location)
   }
 
-  componentDidMount() {
-  //JSON.parse(localStorage.getItem("currentCity"))
-  // fetch(`http://api.wunderground.com/api/${key}/forecast10day/hourly/conditions/q/CO/Denver.json`)
-  // .then( data => data.json())
-  // .then( data => {
-  //   const cleanData = filterData(data)
+  sendToStorage(cityData) {
+     /* console.log(cityData)*/
+      localStorage.setItem("currentCity", JSON.stringify(cityData))
+  }
 
-  //   this.setState(cleanData)
-  //   console.log(this.state)
-  //   })
+  componentDidMount() {   
+    if (this.state.location) {
+      this.citySearch(this.state.location);
+    }
   }
 
   render() {
     return (
       <div>
       {
-        this.state.welcome &&
+        !this.state.location &&
         <Welcome citySearch={this.citySearch} />
       }
       {
-        !this.state.welcome &&
+        this.state.location &&
         <div>
           <Header citySearch={this.citySearch}/>
           <div className='today-wrapper'>
