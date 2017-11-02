@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
-// import autoCompleteCities from './autoCompleteCities';
-// import { Node, Trie } from "@Jessewood/jp-complete-me";
+import autoCompleteCities from './autoCompleteCities';
+import { Node, Trie } from "@Jessewood/jp-complete-me";
 import './Search.scss';
 
 export default class Search extends Component {
   constructor() {
     super();
-    this.state = {}
+    this.state = {};
+    this.trie = new Trie();
+    this.trie.populate(autoCompleteCities.data)
   }
 
   onChange(event) {
+    console.log(this.trie.suggest(event.target.value))
     this.setState({searchLocation: event.target.value})
   }
 
