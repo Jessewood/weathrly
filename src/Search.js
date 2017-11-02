@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-// import autoCompleteCities from './autoCompleteCities';
-// import { Node, Trie } from "@Jessewood/jp-complete-me";
+import autoCompleteCities from './autoCompleteCities';
+import { Node, Trie } from "@Jessewood/jp-complete-me";
 import './Search.scss';
 
 export default class Search extends Component {
@@ -10,6 +10,7 @@ export default class Search extends Component {
   }
 
   onChange(event) {
+    console.log(Trie)
     this.setState({searchLocation: event.target.value})
   }
 
