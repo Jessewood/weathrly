@@ -12,7 +12,7 @@ export default class Search extends Component {
   }
 
   onChange(event) {
-    console.log(this.trie)
+    console.log(this.trie.suggest(event.target.value))
     this.setState({searchLocation: event.target.value})
   }
 
