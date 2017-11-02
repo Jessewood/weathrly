@@ -1,12 +1,13 @@
 import React from 'react'
 import './Card.scss'
 
-const Card = () => {
+const Card = (props) => {
   return(
     <div className="card">
-      <p>Hour/Day</p>
-      <p>Weather Img/Icon</p>
-      <p>Temp/Hi-Lo</p>
+      <p>{props.date}</p>
+      <p>{props.condtions}</p>
+      <img src={props.icon}/>
+      <p>{props.temp ? props.temp : `${props.high}/${props.low}`}</p>
     </div>
   )  
 }

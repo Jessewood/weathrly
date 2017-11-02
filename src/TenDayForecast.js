@@ -7,7 +7,6 @@ export default class TenDayForecast extends React.Component {
   constructor() {
     super();
     this.state = {
-      list: [1,2,3,4,5,6,7,8,9,10]
     }
   }
 
@@ -18,9 +17,16 @@ export default class TenDayForecast extends React.Component {
         <h2>10 Day Forecast </h2>
         <div className='card-wrapper'>
         {
-          this.state.list.map((card) => {
-            return <Card />
-          }) 
+          this.props.tenDayForecast.map((dayForecast) => {
+            return(
+              <Card 
+                date={dayForecast.date}
+                conditions={dayForecast.conditions}
+                icon={dayForecast.icon}
+                high={dayForecast.high}
+                low={dayForecast.low} />
+            )
+          })
         }
         </div>
       </div>
