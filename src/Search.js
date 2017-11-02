@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import autoCompleteCities from './autoCompleteCities';
-import { Node, Trie } from "@Jessewood/jp-complete-me";
+import { Node, Trie } from '@Jessewood/jp-complete-me';
+import { quickSort } from '@julieahawkins/sorting-suite';
 import './Search.scss';
 
 export default class Search extends Component {
@@ -8,12 +9,14 @@ export default class Search extends Component {
     super();
     this.state = {};
     this.trie = new Trie();
-    this.trie.populate(autoCompleteCities.data)
+    this.trie.populate(quickSort(autoCompleteCities.data))
   }
 
   onChange(event) {
-    console.log(this.trie.suggest(event.target.value))
-    this.setState({searchLocation: event.target.value})
+    if (event.target.value.length > 2) {
+      console.log(this.trie.suggest(event.target.value))
+      this.setState({searchLocation: event.target.value})
+    }
   }
 
   render() {
