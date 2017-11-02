@@ -24,12 +24,25 @@ export default class App extends Component {
     this.citySearch = this.citySearch.bind(this)
   }
 
+  testInput(inputVal) {
+    if (isNaN(parseInt(inputVal))) {
+        this.setState({
+          location: inputVal
+        })
+      let [city, state] = inputVal.split(/,\s+/)
+      console.log(inputVal)
+      return `${state}/${city}`
+    } else {
+      this.setState({
+        location: inputVal
+      })
+      return inputVal
+    }
+  }
+
   citySearch(location) {
-    this.setState({
-      location: location
-    })
-    let [city, state] = location.split(/,\s+/)
-    fetch(`http://api.wunderground.com/api/${key}/forecast10day/hourly/conditions/q/${state}/${city}.json`)
+    location = this.testInput(location)
+    fetch(`http://api.wunderground.com/api/${key}/forecast10day/hourly/conditions/q/${location}.json`)
       .then( data => data.json())
       .then( data => {
         const cleanData = filteredData(data)
