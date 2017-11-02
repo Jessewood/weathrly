@@ -21,6 +21,10 @@ export default class Search extends Component {
           <input className="search-input" placeholder='Choose a city...' onChange={this.onChange.bind(this)} />
         </div>
         <button className="search-button" onClick={() => {this.props.citySearch(this.state.searchLocation)}}>Search</button>
+        { 
+          // this.props.errorText &&  
+          // <div>{this.props.errorText}</div>
+        }
       </div>
     )
   }
