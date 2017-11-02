@@ -4,14 +4,12 @@ import './CurrentWeather.scss'
 const CurrentWeather = (props) => {
   return(
     <div className='current-weather-wrapper'>
-      <h2 className='current-weather-title'>Current Weather</h2>
+      <h2 className='current-weather-title'>{props.location}</h2>
       <div className='card'>
-        <p>name of the current city</p>
-        <p>current condition</p>
-        <p>current day</p>
-        <p>current temperature</p>
-        <p>expected high and expected low for the day</p>
-        <p>weather summary(“Windy, chance of a few late night showers. Lows overnight in the mid 50s.)</p>
+        <p>{props.currentForecast.conditions}</p>
+        <p>{props.currentForecast.date}</p>
+        <p>{props.currentForecast.low}{props.currentForecast.high}</p>
+        <p>{props.currentForecast.summary}</p>
       </div>
     </div>
 

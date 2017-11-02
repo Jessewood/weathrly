@@ -5,6 +5,7 @@ import CurrentWeather from './CurrentWeather'
 import SevenHourForecast from './SevenHourForecast'
 import TenDayForecast from './TenDayForecast'
 import key from '../.api.js'
+import filterData from './cleanData'
 import './App.scss'
 
 export default class App extends Component {
@@ -12,38 +13,43 @@ export default class App extends Component {
     super()
     this.state = {
       welcome: true,
-      currentData: null,
-      sevenHourData: null,
-      tenDayData: null
+      location: null,
+      currentForecast: {},
+      sevenDayForecast: [],
+      tenDayForecast: []
+
     }
     this.citySearch = this.citySearch.bind(this)
   }
 
-  citySearch() {
+  citySearch(location) {
+    console.log(location)
     this.setState({
-      welcome: false
+      welcome: false,
+      location: location
     })
+    let [city, state] = location.split(/,\s+/)
+    fetch(`http://api.wunderground.com/api/${key}/forecast10day/hourly/conditions/q/${state}/${city}.json`)
+      .then( data => data.json())
+      .then( data => {
+        const cleanData = filterData(data)
+
+        this.setState(cleanData)
+        console.log(this.state.location)
+        })
+      localStorage.setItem("currentCity", JSON.stringify(this.state.location)
   }
 
   componentDidMount() {
-  fetch(`http://api.wunderground.com/api/${key}/conditions/q/CO/Denver.json`)
-  .then( data => data.json())
-  .then( data => {
-    const currentData = {
-      location: data.current_observation.display_location.full
-    };
-    const sevenHourData = {
-      location: data.current_observation.display_location.full
-    };
-    const tenDayData = {
-      location: data.current_observation.display_location.full
-    };
-    this.setState({currentData: currentData,
-                    sevenHourData: sevenHourData,
-                    tenDayData: tenDayData
-      });
-    console.log(this.state)
-    })
+  //JSON.parse(localStorage.getItem("currentCity"))
+  // fetch(`http://api.wunderground.com/api/${key}/forecast10day/hourly/conditions/q/CO/Denver.json`)
+  // .then( data => data.json())
+  // .then( data => {
+  //   const cleanData = filterData(data)
+
+  //   this.setState(cleanData)
+  //   console.log(this.state)
+  //   })
   }
 
   render() {
@@ -56,13 +62,13 @@ export default class App extends Component {
       {
         !this.state.welcome &&
         <div>
-          <Header />
+          <Header citySearch={this.citySearch}/>
           <div className='today-wrapper'>
-            <CurrentWeather />
-            <SevenHourForecast />
+            <CurrentWeather location={this.state.location} currentForecast={this.state.currentForecast} />
+            <SevenHourForecast sevenHourForecast={this.state.sevenHourForecast.slice(0, 7)} />
           </div>
           <div className='ten-day-wrapper'>
-            <TenDayForecast />
+            <TenDayForecast tenDayForecast={this.state.tenDayForecast}  />
           </div>
         </div>
       }
