@@ -29,7 +29,8 @@ export default class Search extends Component {
           <img src="../public/if_location_pin.svg" className="search-icon" />
           <input className="search-input" value={this.state.value} placeholder='Choose a city or zip code...' onChange={this.onChange.bind(this)} />
         </div>
-        <button className="search-button" 
+        <button className="search-button"
+                disabled={!this.state.value}
                 onClick={() => {
                   this.props.citySearch(this.state.searchLocation)
                   this.setState({value: ''})
