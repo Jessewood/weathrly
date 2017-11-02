@@ -6,11 +6,13 @@ import './Search.scss';
 export default class Search extends Component {
   constructor() {
     super();
-    this.state = {}
+    this.state = {};
+    this.trie = new Trie();
+    this.trie.populate(autoCompleteCities.data)
   }
 
   onChange(event) {
-    console.log(Trie)
+    console.log(this.trie)
     this.setState({searchLocation: event.target.value})
   }
 
