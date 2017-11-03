@@ -77,10 +77,10 @@ export default class App extends Component {
           <Header citySearch={this.citySearch}/>
           <div className='today-wrapper'>
             <CurrentWeather location={this.state.location} currentForecast={this.state.currentForecast} />
-            <SevenHourForecast sevenHourForecast={this.state.sevenHourForecast.slice(0, 7)} />
+            <SevenHourForecast sevenHourForecast={this.state.sevenHourForecast.slice(0, 10)} />
           </div>
           <div className='ten-day-wrapper'>
-            <TenDayForecast tenDayForecast={this.state.tenDayForecast}  />
+            <TenDayForecast tenDayForecast={this.state.tenDayForecast.slice(0, 7)}  />
           </div>
         </div>
       }

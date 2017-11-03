@@ -1,12 +1,12 @@
 
 
 const filteredData = (data) => {
-  console.log(data)
   return {
     location: data.current_observation.display_location.full,
     currentForecast: { 
       conditions: data.current_observation.weather,
-      date: data.current_observation.observation_time_rfc822,
+      date: data.current_observation.observation_time,
+      icon: data.current_observation.icon_url,
       temp: data.current_observation.temp_f,
       high: data.forecast.simpleforecast.forecastday[0].high.fahrenheit,
       low: data.forecast.simpleforecast.forecastday[0].low.fahrenheit,
@@ -21,7 +21,7 @@ const filteredData = (data) => {
 const sevenHourForecast = (data) => {
   return data.map( (hour) => {
     return {
-      date: hour.FCTTIME.weekday_name,
+      time: hour.FCTTIME.civil,
       conditions: hour.condition,
       icon: hour.icon_url,
       temp: hour.temp.english
