@@ -1,0 +1,12 @@
+@import 'variable';
+
+.error-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.error-wrapper img {
+  width: 400px;
+}

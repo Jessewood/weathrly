@@ -4,6 +4,7 @@ import Welcome from './Welcome'
 import CurrentWeather from './CurrentWeather'
 import SevenHourForecast from './SevenHourForecast'
 import TenDayForecast from './TenDayForecast'
+import FourOhFour from './FourOhFour'
 import key from '../.api.js'
 import filteredData from './cleanData'
 import './App.scss'
@@ -18,7 +19,8 @@ export default class App extends Component {
       location: currentCity || '',
       currentForecast: {},
       sevenHourForecast: [],
-      tenDayForecast: []
+      tenDayForecast: [],
+      error: false
     }
     
     this.citySearch = this.citySearch.bind(this)
@@ -27,14 +29,16 @@ export default class App extends Component {
   testInput(inputVal) {
     if (isNaN(parseInt(inputVal))) {
         this.setState({
-          location: inputVal
+          location: inputVal,
+          error: false
         })
       let [city, state] = inputVal.split(/,\s+/)
-      console.log(inputVal)
+      
       return `${state}/${city}`
     } else {
       this.setState({
-        location: inputVal
+        location: inputVal,
+        error: false
       })
       return inputVal
     }
@@ -48,9 +52,9 @@ export default class App extends Component {
         const cleanData = filteredData(data)
 
         this.setState(cleanData)
-        /*console.log(this.state.location)*/
         this.sendToStorage(this.state.location) 
         })
+      .catch( error => this.setState({error: true}))
   }
 
   sendToStorage(cityData) {
@@ -75,14 +79,24 @@ export default class App extends Component {
         this.state.location &&
         <div>
           <Header citySearch={this.citySearch}/>
+        </div>
+      }
+      {
+        !this.state.error &&
+        <div>
           <div className='today-wrapper'>
-            <CurrentWeather location={this.state.location} currentForecast={this.state.currentForecast} />
+            <CurrentWeather location={this.state.location} 
+                            currentForecast={this.state.currentForecast} />
             <SevenHourForecast sevenHourForecast={this.state.sevenHourForecast.slice(0, 7)} />
           </div>
           <div className='ten-day-wrapper'>
             <TenDayForecast tenDayForecast={this.state.tenDayForecast}  />
           </div>
         </div>
+      }
+      {
+        this.state.error &&
+        <FourOhFour />
       }
       </div>
     )

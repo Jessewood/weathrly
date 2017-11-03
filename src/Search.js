@@ -35,10 +35,6 @@ export default class Search extends Component {
                   this.props.citySearch(this.state.searchLocation)
                   this.setState({value: ''})
                 }}>Search</button>
-        { 
-          // this.props.errorText &&  
-          // <div>{this.props.errorText}</div>
-        }
       </div>
     )
   }
