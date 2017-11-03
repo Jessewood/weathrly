@@ -5,8 +5,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: teal;
+  padding: 10px 0px 50px;
+  font-family: $title-font;
+  color: $title-color;
+  font-size: 20pt;
 }
 
 .error-wrapper img {
-  width: 400px;
+  width: 300px;
 }
