@@ -15,11 +15,12 @@ export default class TenDayForecast extends React.Component {
     return(
       <div className='ten-day-card-wrapper'>
         <h2>10 Day Forecast </h2>
-        <div className='card-wrapper'>
+        <div className='ten-card-wrapper'>
         {
-          this.props.tenDayForecast.map((dayForecast) => {
+          this.props.tenDayForecast.map((dayForecast, dayIndex) => {
             return(
-              <Card 
+              <Card
+                key={dayIndex}
                 date={dayForecast.date}
                 conditions={dayForecast.conditions}
                 icon={dayForecast.icon}
