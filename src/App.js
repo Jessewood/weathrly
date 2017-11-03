@@ -97,6 +97,7 @@ export default class App extends Component {
       {
         this.state.error &&
         <FourOhFour />
+        
       }
       </div>
     )
