@@ -1,4 +1,9 @@
 .ten-day-card-wrapper {
   border: 2px solid red;
   color: red;
+  box-shadow: 2px 1px 8px rgba(0, 0, 0, .8);
+}
+.ten-card-wrapper {
+  display: flex;
+  flex-wrap: wrap;
 }

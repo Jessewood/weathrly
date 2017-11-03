@@ -90,7 +90,7 @@ export default class App extends Component {
             <SevenHourForecast sevenHourForecast={this.state.sevenHourForecast.slice(0, 7)} />
           </div>
           <div className='ten-day-wrapper'>
-            <TenDayForecast tenDayForecast={this.state.tenDayForecast}  />
+            <TenDayForecast tenDayForecast={this.state.tenDayForecast.slice(0, 7)}  />
           </div>
         </div>
       }
