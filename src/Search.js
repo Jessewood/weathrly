@@ -18,12 +18,12 @@ export default class Search extends Component {
   onChange(event) {
     this.setState({value: event.target.value})
     if (event.target.value.length > 2) {
-      console.log(this.trie.suggest(event.target.value))
       this.setState({searchLocation: event.target.value, suggestionsArray: this.trie.suggest(event.target.value)})
     }
   }
 
   renderSuggestions() {
+      console.log(this.state.suggestionsArray)
     return (
       <ul>
       {this.state.suggestionsArray.map( (suggestion) => {
