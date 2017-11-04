@@ -13,6 +13,7 @@
   padding: 5px 15px;
   font-size: 20pt;
   font-family: 'Raleway', sans-serif;
+  cursor: pointer;
 }
 
 .search-icon {
@@ -27,7 +28,45 @@
   font-family: 'Raleway', sans-serif;
 }
 
+.search-input:focus {
+  outline: none;
+}
+
 .search-wrapper {
   display: flex;
   height: 50px;
+}
+
+.suggestion-list {
+  position: absolute;
+  background: rgba(210, 210, 210, .8);
+  list-style: none;
+  margin-left: 45px;
+  font-size: 20pt;
+  font-family: 'Raleway', sans-serif;
+  line-height: 1.5em;
+  overflow: scroll;
+  overflow-x: hidden;
+  width: 515px;
+  cursor: pointer;
+}
+
+.suggestion-list::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+.suggestion-list::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: rgba(0,0,0,.5);
+}
+
+.suggestion-list li {
+  padding: 0px 15px;
+}
+
+.suggestion-list li:hover {
+  background: rgba(115, 115, 115, .8);
+  color: #fff;
+  padding: 0px 30px;
+  font-weight: bold;
 }
