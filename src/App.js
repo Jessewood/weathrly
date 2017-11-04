@@ -69,21 +69,14 @@ export default class App extends Component {
   }
 
   render() {
-    return (
-      <div>
-      {
-        !this.state.location &&
+    if (!this.state.location) {
+      return (
         <Welcome citySearch={this.citySearch} />
-      }
-      {
-        this.state.location &&
+      );
+    } else if (this.state.location && !this.state.error) {
+      return (
         <div>
           <Header citySearch={this.citySearch}/>
-        </div>
-      }
-      {
-        !this.state.error && 
-        <div>
           <div className='today-wrapper'>
             <CurrentWeather location={this.state.location} 
                             currentForecast={this.state.currentForecast} />
@@ -93,14 +86,12 @@ export default class App extends Component {
             <TenDayForecast tenDayForecast={this.state.tenDayForecast}  />
           </div>
         </div>
-      }
-      {
-        this.state.error &&
+      );
+    } else if (this.state.error && this.state.location) {
+      return (
         <FourOhFour />
-
-      }
-      </div>
-    );
+      );
+    }
   }
 }
 
