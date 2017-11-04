@@ -15,6 +15,3 @@ const Card = (props) => {
 };
 
 export default Card;
-
-
-      // <p>{props.temp ? props.temp + ' F' : `${props.high}/${props.low}`}</p>

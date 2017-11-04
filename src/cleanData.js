@@ -21,6 +21,7 @@ const filteredData = (data) => {
 const sevenHourForecast = (data) => {
   return data.map( (hour) => {
     return {
+      day: hour.FCTTIME.weekday_name,
       time: hour.FCTTIME.civil,
       conditions: hour.condition,
       icon: hour.icon_url,

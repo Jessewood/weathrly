@@ -1,14 +1,24 @@
+@import 'variable';
+
 .seven-hour-wrapper {
-  border: 3px solid green;
-  box-shadow: 2px 1px 8px rgba(0, 0, 0, .8);
+  width: 40%
+}
+
+.seven-hour-wrapper .card {
+  height: 40px;
+  width: 100%;
+  flex-direction: row;
 }
 
 .seven-hour-wrapper h2 {
-  color: green;
+  // color: green;
+  text-align: center;
+  font-size: 30pt;
+  font-family: $title-font;
+  margin-bottom: 10px;
 }
 
 .seven-card-wrapper {
   display: flex;
-  flex-wrap: wrap;
-  // justify-content: center;
+  flex-direction: column;
 }

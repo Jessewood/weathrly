@@ -6,6 +6,14 @@
   box-sizing: border-box;
 }
 
+p {
+  font-family: $text-font;
+}
+
+.main-wrapper {
+  background: white;
+}
+
 .today-wrapper {
   display: flex;
   justify-content: space-around;

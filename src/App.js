@@ -58,7 +58,6 @@ export default class App extends Component {
   }
 
   sendToStorage(cityData) {
-     /* console.log(cityData)*/
     localStorage.setItem("currentCity", JSON.stringify(cityData));
   }
 
@@ -73,17 +72,19 @@ export default class App extends Component {
       return (
         <Welcome citySearch={this.citySearch} />
       );
-    } else if (this.state.location && !this.state.error) {
+    } else if (this.state.location && !this.state.error && this.state.tenDayForecast.length) {
       return (
         <div>
           <Header citySearch={this.citySearch}/>
-          <div className='today-wrapper'>
-            <CurrentWeather location={this.state.location} 
-                            currentForecast={this.state.currentForecast} />
-            <SevenHourForecast sevenHourForecast={this.state.sevenHourForecast.slice(0, 7)} />
-          </div>
-          <div className='ten-day-wrapper'>
-            <TenDayForecast tenDayForecast={this.state.tenDayForecast}  />
+          <div className='main-wrapper'>
+            <div className='today-wrapper'>
+              <CurrentWeather location={this.state.location} 
+                              currentForecast={this.state.currentForecast} />
+              <SevenHourForecast day={this.state.sevenHourForecast[0]} sevenHourForecast={this.state.sevenHourForecast.slice(0, 7)} />
+            </div>
+            <div className='ten-day-wrapper'>
+              <TenDayForecast tenDayForecast={this.state.tenDayForecast}  />
+            </div>
           </div>
         </div>
       );
@@ -92,6 +93,7 @@ export default class App extends Component {
         <FourOhFour />
       );
     }
+    return null;
   }
 }
 
