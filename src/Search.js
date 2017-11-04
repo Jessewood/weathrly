@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import autoCompleteCities from './autoCompleteCities';
-import { Node, Trie } from '@Jessewood/jp-complete-me';
+import { Trie } from '@Jessewood/jp-complete-me';
 import { quickSort } from '@julieahawkins/sorting-suite';
 import './Search.scss';
 
@@ -16,31 +16,34 @@ export default class Search extends Component {
   }
 
   onChange(event) {
-    this.setState({value: event.target.value})
+    this.setState({value: event.target.value});
     if (event.target.value.length > 2) {
-      console.log('2')
-      this.setState({searchLocation: event.target.value, suggestionsArray: this.trie.suggest(event.target.value)})
+      console.log('2');
+      this.setState({searchLocation: event.target.value, 
+                     suggestionsArray: this.trie.suggest(event.target.value)});
     } else if (event.target.value.length < 3) {
-      this.setState({suggestionsArray: []})
+      this.setState({suggestionsArray: []});
     }
   }
 
   renderSuggestions() {
-      console.log(this.state.suggestionsArray)
+    console.log(this.state.suggestionsArray);
     return (
       <ul className="suggestion-list" 
           style={{"height": Math.min(400, this.state.suggestionsArray.length * 40) + "px"}}>
-        {this.state.suggestionsArray.map( (suggestion, suggestIndex) => {
+        {this.state.suggestionsArray.map((suggestion, suggestIndex) => {
           return (<li key={suggestIndex} 
-                      onClick={() => {this.setState({value: suggestion, searchLocation: suggestion, suggestionsArray: []})
-                                      this.trie.select(suggestion)}} >
-                    {suggestion}
-                  </li>
-                 )
-          }
-        )}
+                      onClick={() => {
+                        this.setState({value: suggestion, 
+                                       searchLocation: suggestion, 
+                                       suggestionsArray: []});
+                        this.trie.select(suggestion);
+                      }}>{suggestion}</li>
+          );
+        }
+      )}
       </ul>
-    )
+    );
   }
 
   render() {
@@ -58,13 +61,12 @@ export default class Search extends Component {
           <button className="search-button"
                   disabled={!this.state.value}
                   onClick={() => {
-                    this.props.citySearch(this.state.searchLocation)
-                    this.setState({value: ''})
+                    this.props.citySearch(this.state.searchLocation);
+                    this.setState({value: ''});
                   }}>Search</button>
         </div>
           {this.renderSuggestions()}
       </div>
-    )
+    );
   }
-  
 }

@@ -1,8 +1,8 @@
-import React from 'react'
-import './CurrentWeather.scss'
+import React from 'react';
+import './CurrentWeather.scss';
 
 const CurrentWeather = (props) => {
-  return(
+  return (
     <div className='current-weather-wrapper'>
       <h2 className='current-weather-title'>{props.location}</h2>
       <div className='current-weather-card'>
@@ -14,7 +14,7 @@ const CurrentWeather = (props) => {
       </div>
     </div>
 
-    )
-}
+  );
+};
 
-export default CurrentWeather
+export default CurrentWeather;
