@@ -5,10 +5,23 @@
 }
 
 .current-weather-wrapper {
-  width: 50%;
-  // padding: 25px;
+  width: 40%;
   align-items: center;
   // border: 1px solid blue;
+}
+
+.current-weather-header {
+  display: flex;
+  justify-content: space-around;
+}
+
+.current-weather-header .temp {
+  font-size: 56pt;
+}
+
+.current-weather-header img {
+  width: 100px;
+  height: 100px;
 }
 
 .cf-summary {

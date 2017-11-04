@@ -9,14 +9,16 @@
 
 p {
   font-family: $text-font;
+  // color: #fff;
 }
 
 .main-wrapper {
-  background: white;
+  // background: grey;
+  padding-left: 25px;
+}
   
 #app {
   height: 100vh;
-
 }
 
 .today-wrapper {
