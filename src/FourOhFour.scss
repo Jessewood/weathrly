@@ -10,8 +10,24 @@
   font-family: $title-font;
   color: $title-color;
   font-size: 20pt;
+  height: 100%;
 }
 
-.error-wrapper img {
+.error-wrapper h1 {
+  letter-spacing: 0.2em;
+  font-size: 40pt;
+  margin: 20px;
+}
+
+.error-wrapper .sad-cloud {
   width: 300px;
+}
+
+.error-wrapper .search-wrapper {
+  height: 35px;
+  /*width: 400px;*/
+}
+
+.error-wrapper .search-button {
+  padding: 0px 10px;
 }

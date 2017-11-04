@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+#app {
+  height: 100vh;
+}
+
 .today-wrapper {
   display: flex;
   justify-content: space-around;
