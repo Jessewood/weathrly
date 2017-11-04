@@ -82,7 +82,7 @@ export default class App extends Component {
         </div>
       }
       {
-        !this.state.error &&
+        !this.state.error && 
         <div>
           <div className='today-wrapper'>
             <CurrentWeather location={this.state.location} 
@@ -90,14 +90,14 @@ export default class App extends Component {
             <SevenHourForecast sevenHourForecast={this.state.sevenHourForecast.slice(0, 7)} />
           </div>
           <div className='ten-day-wrapper'>
-            <TenDayForecast tenDayForecast={this.state.tenDayForecast.slice(0, 7)}  />
+            <TenDayForecast tenDayForecast={this.state.tenDayForecast}  />
           </div>
         </div>
       }
       {
         this.state.error &&
         <FourOhFour />
-        
+
       }
       </div>
     )

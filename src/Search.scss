@@ -46,12 +46,12 @@
   padding: 0px 15px;
 }
 
-::-webkit-scrollbar {
+.suggestion-list::-webkit-scrollbar {
   -webkit-appearance: none;
   width: 15px;
 }
 
-::-webkit-scrollbar-thumb {
+.suggestion-list::-webkit-scrollbar-thumb {
   border-radius: 10px;
   background-color: rgba(0,0,0,.5);
   box-shadow: 0 0 1px rgba(255,255,255,.5);

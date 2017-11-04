@@ -18,9 +18,9 @@ export default class Search extends Component {
   onChange(event) {
     this.setState({value: event.target.value})
     if (event.target.value.length > 2) {
+      console.log('2')
       this.setState({searchLocation: event.target.value, suggestionsArray: this.trie.suggest(event.target.value)})
-    }
-    if (event.target.value.length <=2) {
+    } else if (event.target.value.length < 3) {
       this.setState({suggestionsArray: []})
     }
   }
@@ -31,7 +31,12 @@ export default class Search extends Component {
       <ul className="suggestion-list" 
           style={{"height": Math.min(400, this.state.suggestionsArray.length * 40) + "px"}}>
         {this.state.suggestionsArray.map( (suggestion, suggestIndex) => {
-          return (<li key={suggestIndex}>{suggestion}</li>)
+          return (<li key={suggestIndex} 
+                      onClick={() => {this.setState({value: suggestion, searchLocation: suggestion, suggestionsArray: []})
+                                      this.trie.select(suggestion)}} >
+                    {suggestion}
+                  </li>
+                 )
           }
         )}
       </ul>
