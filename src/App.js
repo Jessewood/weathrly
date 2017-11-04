@@ -5,6 +5,7 @@ import CurrentWeather from './CurrentWeather';
 import SevenHourForecast from './SevenHourForecast';
 import TenDayForecast from './TenDayForecast';
 import FourOhFour from './FourOhFour';
+import Footer from './Footer';
 import key from '../.api.js';
 import filteredData from './cleanData';
 import './App.scss';
@@ -86,11 +87,15 @@ export default class App extends Component {
               <TenDayForecast tenDayForecast={this.state.tenDayForecast}  />
             </div>
           </div>
+          <Footer />
         </div>
       );
     } else if (this.state.error && this.state.location) {
       return (
-        <FourOhFour citySearch={this.citySearch}/>
+        <div>
+          <FourOhFour citySearch={this.citySearch}/>
+          <Footer />
+        </div>
       );
     }
     return null;
