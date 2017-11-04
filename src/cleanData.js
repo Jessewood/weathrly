@@ -15,8 +15,8 @@ const filteredData = (data) => {
     sevenHourForecast: sevenHourForecast(data.hourly_forecast),
     tenDayForecast: tenDayForecast(data.forecast.simpleforecast.forecastday)
     
-  }
-}
+  };
+};
 
 const sevenHourForecast = (data) => {
   return data.map( (hour) => {
@@ -25,9 +25,9 @@ const sevenHourForecast = (data) => {
       conditions: hour.condition,
       icon: hour.icon_url,
       temp: hour.temp.english
-    }
-  })
-}
+    };
+  });
+};
 
 const tenDayForecast = (data) => {
   return data.map( (day) => {
@@ -37,10 +37,10 @@ const tenDayForecast = (data) => {
       icon: day.icon_url,
       high: day.high.fahrenheit,
       low: day.low.fahrenheit
-    }
-  })
-}
+    };
+  });
+};
 
 
 
-export default filteredData
+export default filteredData;
