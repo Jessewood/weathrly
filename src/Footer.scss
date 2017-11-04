@@ -1,0 +1,26 @@
+.footer-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background: teal;
+  padding: 10px;
+}
+
+.footer-wrapper a {
+  text-decoration: none;
+  color: #fff;
+  font-family: Raleway, sans-serif;
+  font-size: 14pt
+}
+
+.github-wrapper {
+  display: flex;
+  margin-left: 30px;
+}
+
+.footer-icon {
+  width: 30px;
+  margin: 0px 10px;
+}
+
