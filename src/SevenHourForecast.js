@@ -10,10 +10,10 @@ export default class SevenHourForecast extends React.Component {
   }
 
   render() {
-    // console.log(this.props.sevenHourForecast)
+    console.log(this.props.day.day);
     return (
       <div className='seven-hour-wrapper'>
-        <h2>7 Hour Forecast </h2>
+        <h2>{this.props.day.day}</h2>
         <div className='seven-card-wrapper'>
         {
           this.props.sevenHourForecast.map((hourForecast, hourIndex) => {

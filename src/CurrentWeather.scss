@@ -5,19 +5,22 @@
 }
 
 .current-weather-wrapper {
-  border: 3px solid blue;
-  width: 300px;
-  padding: 25px;
+  width: 50%;
+  // padding: 25px;
+  align-items: center;
+  // border: 1px solid blue;
 }
 
 .cf-summary {
   margin: 10px auto;
 }
 
-h2 {
+.current-weather-wrapper h2 {
+  margin-bottom: 10px;
+  font-size: 34pt;
   font-family: $title-font;
 }
 
-p {
-  font-family: $text-font;
+.current-weather-wrapper p {
+  font-size: 20pt;
 }

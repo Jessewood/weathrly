@@ -1,9 +1,19 @@
+@import 'variable';
+
 .ten-day-card-wrapper {
-  border: 2px solid red;
-  color: red;
-  box-shadow: 2px 1px 8px rgba(0, 0, 0, .8);
+  padding-top: 20px;
+  // color: red;
+  text-align: center;
 }
+
 .ten-card-wrapper {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+}
+
+.ten-day-card-wrapper h2 {
+  margin-bottom: 10px;
+  font-size: 30pt;
+  font-family: $title-font;
 }

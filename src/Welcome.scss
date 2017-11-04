@@ -1,12 +1,13 @@
 @import 'variable';
 
 .welcome {
-  background: teal;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-image: url('../public/weathrly-welcome.jpg');
+  background-size: cover;
 }
 
 .welcome-title {
