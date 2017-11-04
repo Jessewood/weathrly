@@ -31,3 +31,28 @@
   display: flex;
   height: 50px;
 }
+
+.suggestion-list {
+  position: absolute;
+  background: rgba(210, 210, 210, .8);
+  list-style: none;
+  margin-left: 45px;
+  font-size: 20pt;
+  font-family: 'Raleway', sans-serif;
+  line-height: 1.5em;
+  overflow: scroll;
+  overflow-x: hidden;
+  width: 515px;
+  padding: 0px 15px;
+}
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: rgba(0,0,0,.5);
+  box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
