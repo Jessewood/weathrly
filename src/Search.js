@@ -8,35 +8,36 @@ export default class Search extends Component {
   constructor() {
     super();
     this.state = {
-      value: '',
-      suggestionsArray: []
+      value: ''
     };
     this.trie = new Trie();
-    this.trie.populate(quickSort(autoCompleteCities.data));
+    this.trie.populate(autoCompleteCities.data);
+    this.suggestionsArray = [];
+    this.onChange = this.onChange.bind(this);
+    this.renderSuggestions = this.renderSuggestions.bind(this);
   }
 
   onChange(event) {
     this.setState({value: event.target.value});
     if (event.target.value.length > 2) {
-      console.log('2');
-      this.setState({searchLocation: event.target.value, 
-                     suggestionsArray: this.trie.suggest(event.target.value)});
+      this.setState({searchLocation: event.target.value});
+      this.suggestionsArray = this.trie.suggest(event.target.value);
+      console.log(this.trie);
     } else if (event.target.value.length < 3) {
-      this.setState({suggestionsArray: []});
+      this.suggestionsArray = [];
     }
   }
 
   renderSuggestions() {
-    console.log(this.state.suggestionsArray);
     return (
       <ul className="suggestion-list" 
-          style={{"height": Math.min(400, this.state.suggestionsArray.length * 40) + "px"}}>
-        {this.state.suggestionsArray.map((suggestion, suggestIndex) => {
+          style={{"height": Math.min(400, this.suggestionsArray.length * 40) + "px"}}>
+        {this.suggestionsArray.map((suggestion, suggestIndex) => {
           return (<li key={suggestIndex} 
                       onClick={() => {
                         this.setState({value: suggestion, 
-                                       searchLocation: suggestion, 
-                                       suggestionsArray: []});
+                                       searchLocation: suggestion});
+                        this.suggestionsArray = [];
                         this.trie.select(suggestion);
                       }}>{suggestion}</li>
           );

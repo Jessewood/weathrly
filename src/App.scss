@@ -6,12 +6,17 @@
   box-sizing: border-box;
 }
 
+
 p {
   font-family: $text-font;
 }
 
 .main-wrapper {
   background: white;
+  
+#app {
+  height: 100vh;
+
 }
 
 .today-wrapper {

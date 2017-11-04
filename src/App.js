@@ -90,7 +90,7 @@ export default class App extends Component {
       );
     } else if (this.state.error && this.state.location) {
       return (
-        <FourOhFour />
+        <FourOhFour citySearch={this.citySearch}/>
       );
     }
     return null;
