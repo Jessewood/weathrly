@@ -75,7 +75,7 @@ export default class App extends Component {
       );
     } else if (this.state.location && !this.state.error && this.state.tenDayForecast.length) {
       return (
-        <div>
+        <div className="background">
           <Header citySearch={this.citySearch}/>
           <div className='main-wrapper'>
             <div className='today-wrapper'>

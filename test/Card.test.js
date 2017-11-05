@@ -41,7 +41,7 @@ describe('Card', () => {
 
   it('should render correctly when time props are passed in', () => {
     const card = shallow(<Card time="5:25" />);
-    console.log(card.debug())
+    // console.log(card.debug())
     expect(card.find('p').length).toEqual(3);
     expect(card.find('img').length).toEqual(1);
     expect(card.find('div').length).toEqual(2);
@@ -50,7 +50,7 @@ describe('Card', () => {
 
   it('should render correctly when date props are passed in', () => {
     const card = shallow(<Card date="Monday" />);
-    console.log(card.debug())
+    // console.log(card.debug())
     expect(card.find('p').length).toEqual(4);
     expect(card.find('img').length).toEqual(1);
     expect(card.find('div').length).toEqual(2);

@@ -7,9 +7,10 @@
 //   const header = shallow(<Search />);
 //   const search = header.find('Search');
 
-//   it('should input search', () => {
-//     expect(search.text()).toEqual('');
-//     expect(search.state('value')).toEqual('');
+
+  it.skip('should input search', () => {
+    expect(search.text()).toEqual('');
+    expect(search.state('value')).toEqual('');
 
 //     search.simulate('change', { target: { value: 'den' } });
 

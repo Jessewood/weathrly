@@ -3,11 +3,17 @@
 .welcome {
   height: 100vh;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
   background-image: url('../public/weathrly-welcome.jpg');
   background-size: cover;
+}
+
+.welcome-wrapper {
+  margin: 75px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .welcome-title {
