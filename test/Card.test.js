@@ -54,5 +54,6 @@ describe('Card', () => {
     expect(card.find('p').length).toEqual(4);
     expect(card.find('img').length).toEqual(1);
     expect(card.find('div').length).toEqual(2);
+    
   });
 });
