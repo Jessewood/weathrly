@@ -4,11 +4,13 @@ import './CurrentWeather.scss';
 const CurrentWeather = (props) => {
   return (
     <div className='current-weather-wrapper'>
-      <h2 className='current-weather-title'>{props.location}</h2>
+        <h2 className='current-weather-title'>{props.location}</h2>
+      <div className='current-weather-header'>
+        <img src={props.currentForecast.icon} />
+        <p className='temp'>{props.currentForecast.temp}°F</p>
+      </div>
       <div className='current-weather-card'>
         <p>{props.currentForecast.conditions}</p>
-        <img src={props.currentForecast.icon} />
-        <p>{props.currentForecast.temp}°F</p>
         <p className='cf-summary'>{props.currentForecast.summary}</p>
         <p>{props.currentForecast.date}</p>
       </div>
