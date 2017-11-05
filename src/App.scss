@@ -14,7 +14,13 @@ p {
 
 .main-wrapper {
   padding-left: 25px;
-  background: white;
+}
+
+.background {
+  background-image: url('../public/weathrly-welcome.jpg');
+  background-size: cover;
+  background-postion: center;
+  background-repeat: no-repeat;
 }
   
 #app {
