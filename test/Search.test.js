@@ -11,7 +11,8 @@ describe('Search', () => {
     expect(search.text()).toEqual('');
     expect(search.state('value')).toEqual('');
 
-    saerch.simulate('change', { target: { value: 'den' } });
+    search.simulate('change', { target: { value: 'den' } });
 
     expect(search.state('value')).toEqual('den');
   });
+})
