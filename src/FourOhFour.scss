@@ -6,7 +6,7 @@
   justify-content: center;
   align-items: center;
   background: teal;
-  padding: 10px 0px 50px;
+  /*padding: 10px 0px 50px;*/
   font-family: $title-font;
   color: $title-color;
   font-size: 20pt;
@@ -17,6 +17,10 @@
   letter-spacing: 0.2em;
   font-size: 40pt;
   margin: 20px;
+}
+
+.error-wrapper h2 {
+  margin: 10px;
 }
 
 .error-wrapper .sad-cloud {
