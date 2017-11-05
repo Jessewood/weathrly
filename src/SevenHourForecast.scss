@@ -1,33 +1,51 @@
 @import 'variable';
 
 .seven-hour-wrapper {
-  width: 60%
+  width: 50%;
+  // display: flex;
+  // justify-content: center;
 }
 
 .seven-hour-wrapper .card {
-  height: 40px;
-  width: 75%;
+  height: 35px;
+  width: 100%;
   display: flex;
-  flex-direction: row;
   justify-content: center;
+  // border-bottom: 1px solid black;
+  height: 50px;
 }
 
 .card div.hourcard {
   display: flex;
   width: 100%;
   justify-content: space-around;
+  height: 25px;
+  align-items: center;
 }
 
 .seven-hour-wrapper .time {
-  width: 20%;
+  width: 100px;
   font-weight: bold;
+  text-align: center;
+}
+
+.seven-hour-wrapper .conditions, 
+.seven-hour-wrapper .temp {
+  text-align: center;
 }
 
 .seven-hour-wrapper .conditions {
-  width: 30%
+  width: 130px;
 }
 
+.seven-hour-wrapper img{
+  width: 35px;
+  // height: 30px;
+}
 
+.seven-hour-wrapper .icon {
+  width: 100px;
+}
 
 .seven-hour-wrapper h2 {
   text-align: center;
