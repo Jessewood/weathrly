@@ -10,15 +10,15 @@ const Card = (props) => {
           <p className='time'>{props.time}</p>
           <p className='conditions'>{props.conditions}</p>
           <img src={props.icon}/>
-          <p>{props.temp} </p>     
+          <p className='temp'>{props.temp}°F</p>     
         </div>
       }
       {
         props.date &&
       <div>
-        <p className='time'>{props.date}</p>
+        <p className='date'>{props.date}</p>
         <p className='conditions'>{props.conditions}</p>
-        <img src={props.icon}/>
+        <img className='icon' src={props.icon}/>
         <p>{'High: ' + props.high + '°F'}</p>
         <p>{'Low: ' + props.low + '°F'}</p>
       </div>
