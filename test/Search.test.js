@@ -7,7 +7,7 @@ describe('Search', () => {
   const header = shallow(<Search />);
   const search = header.find('Search');
 
-  it('should input search', () => {
+  it.skip('should input search', () => {
     expect(search.text()).toEqual('');
     expect(search.state('value')).toEqual('');
 
