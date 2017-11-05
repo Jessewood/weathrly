@@ -31,7 +31,7 @@ export default class Search extends Component {
   renderSuggestions() {
     return (
       <ul className="suggestion-list" 
-          style={{"height": Math.min(400, this.suggestionsArray.length * 40) + "px"}}>
+          style={{"height": Math.min(240, this.suggestionsArray.length * 40) + "px"}}>
         {this.suggestionsArray.map((suggestion, suggestIndex) => {
           return (<li key={suggestIndex} 
                       onClick={() => {

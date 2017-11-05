@@ -5,14 +5,14 @@ const Footer = () => {
   return (
     <div className="footer-wrapper">
       <div className="github-wrapper">
-        <a href="https://github.com/julieahawkins">Julie Hawkins</a>
-        <a href="https://github.com/Jessewood/weathrly">
-          <img src="../public/if_github.svg" 
-             className="footer-icon" />
+        <a href="https://github.com/julieahawkins" target="_blank">Julie Hawkins</a>
+        <a href="https://github.com/Jessewood/weathrly" target="_blank">
+          <img className="footer-icon" 
+               src="../public/if_github.svg" />
         </a>
-        <a href="https://github.com/Jessewood">Jesse Packwood</a>
+        <a href="https://github.com/Jessewood" target="_blank">Jesse Packwood</a>
       </div> 
-      <a href="https://www.turing.io/">turing.io</a>
+      <a href="https://www.turing.io/" target="_blank">turing.io</a>
     </div>
   )
 };

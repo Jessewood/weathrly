@@ -9,8 +9,8 @@ const FourOhFour = (props) => {
       <h1>Weathrly</h1>
       <Search citySearch={props.citySearch}/>
       <img className="sad-cloud" src='./public/sad-cloud.png'/>
-      <h1>404</h1>
-      <h2>Oops, City Not Found</h2>
+      <h2>404</h2>
+      <h3>Oops, City Not Found</h3>
     </div>
   );
 };
