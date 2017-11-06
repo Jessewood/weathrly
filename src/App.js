@@ -21,7 +21,7 @@ export default class App extends Component {
       currentForecast: {},
       sevenHourForecast: [],
       tenDayForecast: [],
-      error: false
+      error: ''
     };
     
     this.citySearch = this.citySearch.bind(this);
@@ -31,7 +31,7 @@ export default class App extends Component {
     if (isNaN(parseInt(inputVal))) {
       this.setState({
         location: inputVal,
-        error: false
+        error: ''
       });
       let [city, state] = inputVal.split(/,\s+/);
       
@@ -39,7 +39,7 @@ export default class App extends Component {
     } else {
       this.setState({
         location: inputVal,
-        error: false
+        error: ''
       });
       return inputVal;
     }
@@ -55,7 +55,7 @@ export default class App extends Component {
         this.setState(cleanData);
         this.sendToStorage(this.state.location);
       })
-      .catch( error => this.setState({error: true}));
+      .catch( error => this.setState({error: error}));
   }
 
   sendToStorage(cityData) {
