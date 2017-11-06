@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from './Card';
+import PropTypes from 'prop-types';
 import './TenDayForecast.scss';
 
 export default class TenDayForecast extends React.Component {
@@ -11,6 +12,7 @@ export default class TenDayForecast extends React.Component {
 
   render() {
     const tenDayForecast = this.props.tenDayForecast;
+
     return (
       <div className='ten-day-info-wrapper'>
         <h2>10 Day Forecast </h2>
@@ -33,4 +35,8 @@ export default class TenDayForecast extends React.Component {
     );
   }
 }
+
+TenDayForecast.propTypes = {
+  tenDayForecast: PropTypes.array
+};
 

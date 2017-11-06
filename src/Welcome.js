@@ -1,6 +1,7 @@
 import React from 'react';
-import './Welcome.scss';
 import Search from './Search';
+import PropTypes from 'prop-types';
+import './Welcome.scss';
 
 const Welcome = (props) => {
   return (
@@ -11,6 +12,10 @@ const Welcome = (props) => {
       </div>
     </div>
   );
+};
+
+Welcome.propTypes = {
+  citySearch: PropTypes.func
 };
 
 export default Welcome;
