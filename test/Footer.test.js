@@ -17,7 +17,7 @@ describe('Footer', () => {
 
   it('should render correctly', () => {
     const footer = shallow(<Footer />);
-    console.log(footer.debug())
+    // console.log(footer.debug())
     expect(footer.find('a').length).toEqual(4);
     expect(footer.find('img').length).toEqual(1);
     expect(footer.find('div').length).toEqual(2);
