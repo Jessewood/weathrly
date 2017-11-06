@@ -1,7 +1,10 @@
 @import 'variable';
 
 .current-weather-title {
-  color: blue;
+  color: black;
+  margin-bottom: 10px;
+  font-size: 34pt;
+  font-family: $title-font;
 }
 
 .current-weather-wrapper {
@@ -26,12 +29,6 @@
 
 .cf-summary {
   margin: 10px auto;
-}
-
-.current-weather-wrapper h2 {
-  margin-bottom: 10px;
-  font-size: 34pt;
-  font-family: $title-font;
 }
 
 .current-weather-wrapper p {

@@ -1,19 +1,24 @@
-// import React from 'react';
-// import { shallow, mount } from 'enzyme';
-// import Search from '../src/Search';
+import React from 'react';
+import { shallow, mount } from 'enzyme';
+import Search from '../src/Search';
 
 
-// describe('Search', () => {
-//   const header = shallow(<Search />);
-//   const search = header.find('Search');
+describe('Search', () => {
+  const search = shallow(<Search />);
+  const searchInput = search.find('.search-input');
+  // const search = header.find('Search')
 
+  it('should shallow', () => {
+    const search = shallow(<Search />);
+    expect(search).toBeDefined();
+  })
 
-  it.skip('should input search', () => {
-    expect(search.text()).toEqual('');
+  it('should input search', () => {
+    expect(searchInput.text()).toEqual('');
     expect(search.state('value')).toEqual('');
 
-//     search.simulate('change', { target: { value: 'den' } });
+    searchInput.simulate('change', { target: { value: 'den' } });
 
-//     expect(search.state('value')).toEqual('den');
-//   });
-// })
+    expect(search.state('value')).toEqual('den');
+  });
+})

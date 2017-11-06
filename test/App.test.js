@@ -4,9 +4,39 @@ import App from '../src/App';
 
 
 describe('App', () => {
-  it('should shallow', () => {
-    // const component = shallow(<App />);
 
-    
+var localStorageMock = (function() {
+  var store = {
+    currentCity: '',
+  };
+  return {
+    getItem: function(key) {
+      return JSON.stringify(store[key]);
+    },
+    setItem: function(key, value) {
+      store[key] = value.toString();
+    },
+    clear: function() {
+      store = {};
+    },
+    removeItem: function(key) {
+      delete store[key];
+    }
+  };
+})();
+
+  Object.defineProperty(window, 'localStorage', { value: localStorageMock });
+
+  const app = shallow(<App />);
+
+  it('should shallow', () => {
+    expect(app).toBeDefined();
   })
+
+  it('should have a header', () => {
+    const header = app.find('.header').first()
+    expect(header).toHaveLength(1);
+  })
+
+
 })
