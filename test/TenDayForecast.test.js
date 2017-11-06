@@ -22,7 +22,10 @@ describe('TenDayForecast', () => {
     expect(tenDayForecast.find('Card'))
   })
 
-  // it.skip('should pass props to the cards', () => {
-  //   const card = shallow(<Card />)
-  // })
+  it.skip('should pass props to the cards', () => {
+    const card = shallow(
+      <Card />
+        
+      )
+  })
 })
