@@ -1,9 +1,9 @@
 import React from 'react';
 import Search from './Search';
+import PropTypes from 'prop-types';
 import './FourOhFour.scss';
 
 const FourOhFour = (props) => {
-  console.log(props.citySearch);
   return (
     <div className='error-wrapper'>
       <h1>Weathrly</h1>
@@ -13,6 +13,10 @@ const FourOhFour = (props) => {
       <h3>Oops, City Not Found</h3>
     </div>
   );
+};
+
+FourOhFour.propTypes = {
+  citySearch: PropTypes.func
 };
 
 export default FourOhFour;
