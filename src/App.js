@@ -55,7 +55,7 @@ export default class App extends Component {
         this.setState(cleanData);
         this.sendToStorage(this.state.location);
       })
-      .catch( error => this.setState({error: error}));
+      .catch( error => this.setState({error}));
   }
 
   sendToStorage(cityData) {
@@ -73,7 +73,9 @@ export default class App extends Component {
       return (
         <Welcome citySearch={this.citySearch} />
       );
-    } else if (this.state.location && !this.state.error && this.state.tenDayForecast.length) {
+    } else if (!this.state.error &&
+                this.state.location && 
+                this.state.tenDayForecast.length) {
       return (
         <div className="background">
           <Header citySearch={this.citySearch}/>
@@ -81,7 +83,9 @@ export default class App extends Component {
             <div className='today-wrapper'>
               <CurrentWeather location={this.state.location} 
                               currentForecast={this.state.currentForecast} />
-              <SevenHourForecast day={this.state.sevenHourForecast[0]} sevenHourForecast={this.state.sevenHourForecast.slice(0, 7)} />
+              <SevenHourForecast day={this.state.sevenHourForecast[0]} 
+                                 sevenHourForecast=
+                                 {this.state.sevenHourForecast.slice(0, 7)} />
             </div>
             <div className='ten-day-wrapper'>
               <TenDayForecast tenDayForecast={this.state.tenDayForecast}  />

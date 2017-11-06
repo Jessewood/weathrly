@@ -1,8 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './CurrentWeather.scss';
 
 const CurrentWeather = (props) => {
-  console.log(props);
   return (
     <div className='current-weather-wrapper'>
         <h2 className='current-weather-title'>{props.location}</h2>
@@ -18,6 +18,11 @@ const CurrentWeather = (props) => {
     </div>
 
   );
+};
+
+CurrentWeather.propTypes = {
+  location: PropTypes.string,
+  currentForecast: PropTypes.object
 };
 
 export default CurrentWeather;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Card.scss';
 
 const Card = (props) => {
@@ -25,6 +26,16 @@ const Card = (props) => {
       }
     </div>
   );  
+};
+
+Card.propTypes = {
+  time: PropTypes.string,
+  conditions: PropTypes.string,
+  icon: PropTypes.string,
+  temp: PropTypes.string,
+  date: PropTypes.string,
+  high: PropTypes.string,
+  low: PropTypes.string
 };
 
 export default Card;

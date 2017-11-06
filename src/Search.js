@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import autoCompleteCities from './autoCompleteCities';
 import { Trie } from '@Jessewood/jp-complete-me';
-import { quickSort } from '@julieahawkins/sorting-suite';
+// import { quickSort } from '@julieahawkins/sorting-suite';
+import PropTypes from 'prop-types';
 import './Search.scss';
 
 export default class Search extends Component {
@@ -22,7 +23,6 @@ export default class Search extends Component {
     if (event.target.value.length > 2) {
       this.setState({searchLocation: event.target.value});
       this.suggestionsArray = this.trie.suggest(event.target.value);
-      console.log(this.trie);
     } else if (event.target.value.length < 3) {
       this.suggestionsArray = [];
     }
@@ -31,7 +31,8 @@ export default class Search extends Component {
   renderSuggestions() {
     return (
       <ul className="suggestion-list" 
-          style={{"height": Math.min(240, this.suggestionsArray.length * 40) + "px"}}>
+          style=
+          {{"height": Math.min(240, this.suggestionsArray.length * 40) + "px"}}>
         {this.suggestionsArray.map((suggestion, suggestIndex) => {
           return (<li key={suggestIndex} 
                       onClick={() => {
@@ -71,3 +72,7 @@ export default class Search extends Component {
     );
   }
 }
+
+Search.propTypes = {
+  citySearch: PropTypes.func
+};
