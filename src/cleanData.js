@@ -14,7 +14,6 @@ const filteredData = (data) => {
     },
     sevenHourForecast: sevenHourForecast(data.hourly_forecast),
     tenDayForecast: tenDayForecast(data.forecast.simpleforecast.forecastday)
-    
   };
 };
 
