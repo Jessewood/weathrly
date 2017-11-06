@@ -6,7 +6,6 @@ import Search from '../src/Search';
 describe('Search', () => {
   const search = shallow(<Search />);
   const searchInput = search.find('.search-input');
-  // const search = header.find('Search')
 
   it('should shallow', () => {
     const search = shallow(<Search />);
