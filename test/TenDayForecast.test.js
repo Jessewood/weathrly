@@ -4,9 +4,15 @@ import TenDayForecast from '../src/TenDayForecast';
 
 
 describe('TenDayForecast', () => {
-  it('should shallow', () => {
-    // const component = shallow(<TenDayForecast />);
+  it('should exist', () => {
+    const tenDayForecast = shallow(<TenDayForecast />)
+    expect(tenDayForecast).toBeDefined()
+  });
+
+  // it('should have cards', () => {
 
     
-  })
+  //   expect()
+  // })
+  // })
 })
