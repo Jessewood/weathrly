@@ -1,14 +1,16 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import App from '../src/App';
+import mockData from '../__mocks__/fileMock'
 
 
 describe('App', () => {
 
-var localStorageMock = (function() {
+global.localStorage = (function() {
   var store = {
     currentCity: '',
   };
+
   return {
     getItem: function(key) {
       return JSON.stringify(store[key]);
@@ -25,11 +27,9 @@ var localStorageMock = (function() {
   };
 })();
 
-  Object.defineProperty(window, 'localStorage', { value: localStorageMock });
-
   const app = shallow(<App />);
 
-  it('should shallow', () => {
+  it('should exist', () => {
     expect(app).toBeDefined();
   })
 
@@ -40,9 +40,13 @@ var localStorageMock = (function() {
 
   it('should render Welcome if there is no location', () => {
     const welcome = app.find('Welcome')
-    expect(welcome.length).toEqual(1)
-    //simulate state change
-    //expect welcome.length to Equal 0
+    expect(welcome.length).toEqual(0)
+    localStorage.setItem("currentCity", 'Denver, CO')
+    console.log(localStorage)
+    localStorage.getItem("currentCity")
+    // const currentWeather = app.find('.current-weather')
+    console.log(app.debug())
+    expect(welcome.length).toEqual(0)
   })
 
   it('should render error if the location does not exist', () => {
