@@ -3,7 +3,7 @@
 * {
   margin: 0px;
   padding: 0px;
-  box-sizing: border-box;
+  box-sizing: border-box;  
 }
 
 
@@ -12,7 +12,7 @@ p {
 }
 
 .main-wrapper {
-  padding-left: 25px;
+  padding: 10px;
 }
 
 .background {
@@ -29,10 +29,4 @@ p {
 .today-wrapper {
   display: flex;
   justify-content: space-around;
-}
-
-
-.ten-day-wrapper {
-  display: flex;
-  justify-content: center;
 }

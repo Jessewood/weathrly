@@ -14,6 +14,11 @@
   font-size: 20pt;
   font-family: 'Raleway', sans-serif;
   cursor: pointer;
+  color: rgb(25, 75, 102);
+}
+
+.search-button:disabled {
+  color: grey;
 }
 
 .search-icon {
@@ -26,6 +31,7 @@
   font-size: 20pt;
   width: 500px;
   font-family: 'Raleway', sans-serif;
+  color: rgb(25, 75, 102);
 }
 
 .search-input:focus {
@@ -62,6 +68,7 @@
 
 .suggestion-list li {
   padding: 0px 15px;
+  color: rgb(25, 75, 102);
 }
 
 .suggestion-list li:hover {
