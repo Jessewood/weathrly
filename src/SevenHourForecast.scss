@@ -2,8 +2,11 @@
 
 .seven-hour-wrapper {
   width: 50%;
-  // display: flex;
-  // justify-content: center;
+  border-radius: 25px;
+  background: rgba(244, 250, 255, .7);
+  margin: 20px;
+  box-shadow: 2px 5px 15px rgba(100, 100, 100, 0.6);
+  color: rgb(25, 75, 102);
 }
 
 .seven-hour-wrapper .card {

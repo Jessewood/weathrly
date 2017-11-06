@@ -12,7 +12,7 @@ export default class TenDayForecast extends React.Component {
   render() {
     const tenDayForecast = this.props.tenDayForecast || [];
     return (
-      <div className='ten-day-card-wrapper'>
+      <div className='ten-day-info-wrapper'>
         <h2>10 Day Forecast </h2>
         <div className='ten-card-wrapper'>
         {
