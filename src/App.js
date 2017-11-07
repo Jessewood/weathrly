@@ -47,6 +47,7 @@ export default class App extends Component {
 
   citySearch(location) {
     location = this.testInput(location);
+    //eslint-disable-next-line max-len
     fetch(`http://api.wunderground.com/api/${key}/forecast10day/hourly/conditions/q/${location}.json`)
       .then( data => data.json())
       .then( data => {
