@@ -12,6 +12,7 @@
   margin: 75px;
   height: 350px;
   display: flex;
+  align-items: center;
   flex-direction: column;
   justify-content: space-between;
 }
@@ -24,5 +25,32 @@
   letter-spacing: .1em;
 }
 
+@media screen and (max-width: 750px) {
+  .welcome-title {
+    font-size: 80pt;
+    margin: 0px;
+  } 
 
+  .welcome .search-input {
+    width: 350px;
+    font-size: 18pt;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .welcome-title {
+    font-size: 50pt;
+  }
+  .welcome .search-input {
+    width: 80%;
+    font-size: 16pt;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .welcome .search-button {
+    font-size: 16pt;
+  }
+}
 
