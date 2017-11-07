@@ -27,3 +27,33 @@
   height: 25px;
 }
 
+@media screen and (max-width: 950px) {
+  .header .search-input {
+    width: 300px;
+    font-size: 18pt;
+  }
+}
+
+@media screen and (max-width: 715px) {
+  .header {
+    flex-direction: column-reverse;
+  }
+
+  .header h1 {
+    margin-bottom: 15px;
+  }
+}
+
+@media screen and (max-width: 505px) {
+  .header .search-input {
+    width: 80%;
+    font-size: 16pt;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .header .search-button {
+    font-size: 16pt;
+  }
+}

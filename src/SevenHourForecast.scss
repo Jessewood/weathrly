@@ -19,7 +19,7 @@
 
 .card div.hourcard {
   display: flex;
-  width: 100%;
+  // width: 100%;
   justify-content: space-around;
   height: 25px;
   align-items: center;
@@ -60,4 +60,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+@media screen and (max-width: 760px) {
+  .seven-hour-wrapper {
+    width: 97%;
+    margin: 10px;
+  }
 }

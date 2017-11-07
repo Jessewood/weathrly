@@ -38,3 +38,9 @@
 .ten-day-info-wrapper .conditions {
   height: 45px;
 }
+
+@media screen and (max-width: 760px) {
+  .ten-day-info-wrapper {
+    margin: 10px;
+  }
+}
