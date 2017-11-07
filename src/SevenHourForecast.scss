@@ -7,6 +7,9 @@
   margin: 20px;
   box-shadow: 2px 5px 15px rgba(100, 100, 100, 0.6);
   color: rgb(25, 75, 102);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .seven-hour-wrapper .card {

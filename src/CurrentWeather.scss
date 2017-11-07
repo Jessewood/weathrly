@@ -8,7 +8,9 @@
 
 .current-weather-wrapper {
   width: 50%;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   border-radius: 25px;
   background: rgba(244, 250, 255, .7);
   margin: 20px;
@@ -36,5 +38,5 @@
 }
 
 .current-weather-wrapper p {
-  font-size: 20pt;
+  font-size: 18pt;
 }
