@@ -1,17 +1,19 @@
+@import 'variable';
+
 .footer-wrapper {
+  align-items: center;
+  background: $background-color;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  align-items: center;
-  background: rgba(90, 136, 154, 0.8);
   padding: 10px;
 }
 
 .footer-wrapper a {
+  color: $footer-color;
+  font-family: $footer-font;
+  font-size: 14pt;
   text-decoration: none;
-  color: #fff;
-  font-family: Raleway, sans-serif;
-  font-size: 14pt
 }
 
 .github-wrapper {
@@ -20,7 +22,7 @@
 }
 
 .footer-icon {
-  width: 30px;
   margin: 0px 10px;
+  width: 30px;
 }
 

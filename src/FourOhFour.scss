@@ -1,21 +1,21 @@
 @import 'variable';
 
 .error-wrapper {
+  align-items: center;
+  background: $error-background-color;
+  color: $title-color;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: rgba(90, 136, 154, 1);
-  padding: 6px;
   font-family: $title-font;
-  color: $title-color;
   font-size: 20pt;
   height: 100%;
+  justify-content: center;
+  padding: 6px;
 }
 
 .error-wrapper h1 {
-  letter-spacing: 0.2em;
   font-size: 40pt;
+  letter-spacing: 0.2em;
   margin: 20px;
 }
 
@@ -24,8 +24,8 @@
 }
 
 .error-wrapper h3 {
-  margin-bottom: 40px;
   letter-spacing: .05em;
+  margin-bottom: 40px;
 }
 
 .error-wrapper .sad-cloud {
@@ -34,7 +34,6 @@
 
 .error-wrapper .search-wrapper {
   height: 35px;
-  /*width: 400px;*/
 }
 
 .error-wrapper .search-button {

@@ -1,22 +1,21 @@
 @import 'variable';
 
 .current-weather-title {
-  margin-bottom: 10px;
-  font-size: 28pt;
   font-family: $title-font;
+  font-size: 28pt;
+  margin-bottom: 10px;
 }
 
 .current-weather-wrapper {
-  // width: 50%;
+  background: $card-background-color;
+  border-radius: 25px;
+  box-shadow: $box-shadow;
+  color: $text-color;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border-radius: 25px;
-  background: rgba(244, 250, 255, .7);
   margin: 20px;
   padding: 15px;
-  box-shadow: 2px 5px 15px rgba(100, 100, 100, 0.6);
-  color: rgb(25, 75, 102);
 }
 
 .current-weather-header {
@@ -29,8 +28,8 @@
 }
 
 .current-weather-header img {
-  width: 100px;
   height: 100px;
+  width: 100px;
 }
 
 .cf-summary {

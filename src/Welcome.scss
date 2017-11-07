@@ -1,28 +1,28 @@
 @import 'variable';
 
 .welcome {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  background-image: url('../public/weathrly-welcome.jpg');
+  background-image: $background-image;
   background-size: cover;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
 }
 
 .welcome-wrapper {
-  margin: 75px;
-  height: 350px;
-  display: flex;
   align-items: center;
+  display: flex;
   flex-direction: column;
+  height: 350px;
   justify-content: space-between;
+  margin: 75px;
 }
 
 .welcome-title {
   color: $title-color;
-  font-size: 100pt;
-  margin: 0px 0px 90px 0px;
   font-family: $title-font;
+  font-size: 100pt;
   letter-spacing: .1em;
+  margin: 0px 0px 90px 0px;
 }
 
 @media screen and (max-width: 750px) {
@@ -32,8 +32,8 @@
   } 
 
   .welcome .search-input {
-    width: 350px;
     font-size: 18pt;
+    width: 350px;
   }
 }
 
@@ -42,11 +42,11 @@
     font-size: 50pt;
   }
   .welcome .search-input {
-    width: 80%;
     font-size: 16pt;
-    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 80%;
   }
 
   .welcome .search-button {
