@@ -11,7 +11,7 @@ import TenDayForecast from '../src/TenDayForecast';
     summary: 'Winds NW at 10mph'
   };
 
-const tenDayForecast = shallow(<TenDayForecast tenDayForecast={[]}/>)
+const tenDayForecast = shallow(<TenDayForecast tenDayForecast={[1,2,3,4,5,6,7,8,9,10]}/>)
 
 describe('TenDayForecast', () => {
   it('should exist', () => {
@@ -22,10 +22,7 @@ describe('TenDayForecast', () => {
     expect(tenDayForecast.find('Card'))
   })
 
-  it.skip('should pass props to the cards', () => {
-    const card = shallow(
-      <Card />
-        
-      )
+  it('should have 10 cards', () => {
+    expect(tenDayForecast.find('Card').length).toEqual(10);
   })
 })
