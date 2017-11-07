@@ -24,7 +24,7 @@ const TenDayForecast = (props) => {
       </div>
     </div>
   );
-}
+};
 
 
 TenDayForecast.propTypes = {
