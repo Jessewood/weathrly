@@ -44,3 +44,28 @@
 .error-wrapper .search-icon {
   height: 25px;
 }
+
+@media screen and (max-width: 690px) {
+  .error-wrapper .search-input {
+    width: 300px;
+    font-size: 18pt;  
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .error-wrapper .search-input {
+    width: 80%;
+    font-size: 16pt;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .error-wrapper .search-button {
+    font-size: 16pt;
+  }
+
+  .error-wrapper .sad-cloud {
+    width: 200px;
+  }
+}
