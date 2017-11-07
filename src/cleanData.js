@@ -17,29 +17,29 @@ const filteredData = (data) => {
   };
 };
 
-const sevenHourForecast = (data) => {
-  return data.map( (hour) => {
-    return {
+const sevenHourForecast = (data) => (
+  data.map( (hour) => (
+    {
       day: hour.FCTTIME.weekday_name,
       time: hour.FCTTIME.civil,
       conditions: hour.condition,
       icon: hour.icon_url,
       temp: hour.temp.english
-    };
-  });
-};
+    }
+  ))
+);
 
-const tenDayForecast = (data) => {
-  return data.map( (day) => {
-    return {
+const tenDayForecast = (data) => (
+  data.map( (day) => (
+    {
       date: day.date.weekday,
       conditions: day.conditions,
       icon: day.icon_url,
       high: day.high.fahrenheit,
       low: day.low.fahrenheit
-    };
-  });
-};
+    }
+  ))
+);
 
 
 
