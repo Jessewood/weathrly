@@ -1,12 +1,12 @@
-#Wireframes
+# Wireframes
 
-###Welcome Screen
+### Welcome Screen
 ![screenshot](./public/wireframes/welcome-screen.png)
-###Current Weather and 7 Hour Containers
+### Current Weather and 7 Hour Containers
 ![screenshot](./public/wireframes/currentweather-7hour.png)
-###Ten-day Container
+### Ten-day Container
 ![screenshot](./public/wireframes/tenday.png)
-###Footer
+### Footer
 ![screenshot](./public/wireframes/footer.png)
-###Error Page
+### Error Page
 ![screenshot](./public/wireframes/error404.png)
