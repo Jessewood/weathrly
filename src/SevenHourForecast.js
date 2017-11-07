@@ -24,7 +24,7 @@ const SevenHourForecast = (props) => {
       </div>
     </div>
   );  
-}
+};
 
 SevenHourForecast.propTypes = {
   day: PropTypes.object,
