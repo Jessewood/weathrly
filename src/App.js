@@ -96,7 +96,7 @@ export default class App extends Component {
       );
     } else if (this.state.error && this.state.location) {
       return (
-        <div>
+        <div className="error">
           <FourOhFour citySearch={this.citySearch}/>
           <Footer />
         </div>

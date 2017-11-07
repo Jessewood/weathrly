@@ -9,7 +9,7 @@ const Footer = () => {
            target="_blank">Julie Hawkins</a>
         <a href="https://github.com/Jessewood/weathrly" target="_blank">
           <img className="footer-icon" 
-               src="../public/if_github.svg" />
+               src="../public/github-icon.svg" />
         </a>
         <a href="https://github.com/Jessewood" 
            target="_blank">Jesse Packwood</a>

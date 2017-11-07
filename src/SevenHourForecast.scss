@@ -7,15 +7,14 @@
   margin: 20px;
   box-shadow: 2px 5px 15px rgba(100, 100, 100, 0.6);
   color: rgb(25, 75, 102);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .seven-hour-wrapper .card {
-  height: 35px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  // border-bottom: 1px solid black;
-  height: 50px;
+  width: 95%;
+  border-bottom: 1px groove;
 }
 
 .card div.hourcard {
@@ -52,7 +51,7 @@
 
 .seven-hour-wrapper h2 {
   text-align: center;
-  font-size: 30pt;
+  font-size: 26pt;
   font-family: $title-font;
   margin-bottom: 10px;
 }

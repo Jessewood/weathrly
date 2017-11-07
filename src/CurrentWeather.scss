@@ -2,13 +2,15 @@
 
 .current-weather-title {
   margin-bottom: 10px;
-  font-size: 34pt;
+  font-size: 28pt;
   font-family: $title-font;
 }
 
 .current-weather-wrapper {
   width: 50%;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   border-radius: 25px;
   background: rgba(244, 250, 255, .7);
   margin: 20px;
@@ -23,7 +25,7 @@
 }
 
 .current-weather-header .temp {
-  font-size: 56pt;
+  font-size: 50pt;
 }
 
 .current-weather-header img {
@@ -36,5 +38,5 @@
 }
 
 .current-weather-wrapper p {
-  font-size: 20pt;
+  font-size: 18pt;
 }
