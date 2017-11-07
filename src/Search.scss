@@ -1,21 +1,22 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import 'variable';
 
 .input-wrapper {
-  border-radius: 30px 0px 0px 30px;
-  border: none;
-  background: #fff;
-  display: flex;
   align-items: center;
+  background: $title-color;
+  border: none;
+  border-radius: 30px 0px 0px 30px;
+  display: flex;
 }
 
 .search-button {
+  background: #ccc;
   border-radius: 0px 30px 30px 0px;
   border: none;
-  padding: 5px 15px;
-  font-size: 20pt;
-  font-family: 'Raleway', sans-serif;
+  color: $text-color;
   cursor: pointer;
-  color: rgb(25, 75, 102);
+  font-family: $text-font;
+  font-size: 20pt;
+  padding: 5px 15px;
 }
 
 .search-button:disabled {
@@ -29,10 +30,10 @@
 
 .search-input {
   border: none;
+  color: $text-color;
+  font-family: $text-font;
   font-size: 20pt;
   width: 500px;
-  font-family: 'Raleway', sans-serif;
-  color: rgb(25, 75, 102);
 }
 
 .search-input:focus {
@@ -45,17 +46,17 @@
 }
 
 .suggestion-list {
-  position: absolute;
   background: rgba(210, 210, 210, .8);
+  cursor: pointer;
+  font-family: $footer-font;
+  font-size: 20pt;
+  line-height: 1.5em;
   list-style: none;
   margin-left: 45px;
-  font-size: 20pt;
-  font-family: 'Raleway', sans-serif;
-  line-height: 1.5em;
   overflow: scroll;
   overflow-x: hidden;
+  position: absolute;
   width: 515px;
-  cursor: pointer;
 }
 
 .suggestion-list::-webkit-scrollbar {
@@ -63,18 +64,18 @@
 }
 
 .suggestion-list::-webkit-scrollbar-thumb {
-  border-radius: 10px;
   background: rgba(0, 0, 0, .5);
+  border-radius: 10px;
 }
 
 .suggestion-list li {
+  color: $text-color;
   padding: 0px 15px;
-  color: rgb(25, 75, 102);
 }
 
 .suggestion-list li:hover {
   background: rgba(115, 115, 115, .8);
-  color: #fff;
-  padding: 0px 30px;
+  color: $title-color;
   font-weight: bold;
+  padding: 0px 30px;
 }
