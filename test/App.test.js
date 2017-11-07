@@ -31,9 +31,9 @@ describe('App', () => {
   it('should render Welcome if there is no location', () => {
     expect(app.find('Welcome').length).toEqual(1)
     localStorage.setItem("currentCity", 'Denver, CO')
-    console.log(app.state());
+    // console.log(app.state());
     app.setState({location: localStorage.getItem('currentCity')})
-    console.log(app.state());
+    // console.log(app.state());
     localStorage.getItem("currentCity")
     expect(app.find('Welcome').length).toEqual(0)
   })

@@ -16,6 +16,7 @@
   justify-content: space-between;
   margin: 20px;
   padding: 15px;
+  width: 50%;
 }
 
 .current-weather-header {
@@ -40,8 +41,23 @@
   font-size: 18pt;
 }
 
+.current-temp-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.current-temp-wrapper p {
+  font-size: 16pt;
+}
+
 @media screen and (max-width: 760px) {
   .current-weather-wrapper {
     margin: 10px;
+    width: 96.5%;
+  }
+
+  .current-temp-wrapper p {
+    font-size: 12pt;
   }
 }
