@@ -1,33 +1,23 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import App from '../src/App';
-import mockData from '../__mocks__/fileMock'
 
+global.localStorage = {
+
+    getItem(key) {
+      if (!global.localStorage[key]){
+        return null;
+      } 
+      return JSON.stringify(global.localStorage[key]);
+    },
+    setItem (key, value) {
+      global.localStorage[key] = value;
+    }
+};
 
 describe('App', () => {
 
-global.localStorage = (function() {
-  var store = {
-    currentCity: '',
-  };
-
-  return {
-    getItem: function(key) {
-      return JSON.stringify(store[key]);
-    },
-    setItem: function(key, value) {
-      store[key] = value.toString();
-    },
-    clear: function() {
-      store = {};
-    },
-    removeItem: function(key) {
-      delete store[key];
-    }
-  };
-})();
-
-  const app = shallow(<App />);
+  let app = shallow(<App />);
 
   it('should exist', () => {
     expect(app).toBeDefined();
@@ -39,19 +29,13 @@ global.localStorage = (function() {
   })
 
   it('should render Welcome if there is no location', () => {
-    const welcome = app.find('Welcome')
-    expect(welcome.length).toEqual(0)
+    expect(app.find('Welcome').length).toEqual(1)
     localStorage.setItem("currentCity", 'Denver, CO')
-    console.log(localStorage)
+    console.log(app.state());
+    app.setState({location: localStorage.getItem('currentCity')})
+    console.log(app.state());
     localStorage.getItem("currentCity")
-    // const currentWeather = app.find('.current-weather')
-    console.log(app.debug())
-    expect(welcome.length).toEqual(0)
+    expect(app.find('Welcome').length).toEqual(0)
   })
-
-  it('should render error if the location does not exist', () => {
-
-  })
-
 
 })
