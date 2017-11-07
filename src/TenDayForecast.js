@@ -15,7 +15,7 @@ export default class TenDayForecast extends React.Component {
 
     return (
       <div className='ten-day-info-wrapper'>
-        <h2>10 Day Forecast </h2>
+        <h2>10 Day Forecast</h2>
         <div className='ten-card-wrapper'>
         {
           tenDayForecast.map((dayForecast, dayIndex) => {

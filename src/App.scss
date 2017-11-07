@@ -18,7 +18,6 @@ p {
 .background {
   background-image: url('../public/weathrly-welcome.jpg');
   background-size: cover;
-  background-postion: center;
   background-repeat: no-repeat;
 }
   
@@ -30,3 +29,11 @@ p {
   display: flex;
   justify-content: space-around;
 }
+
+.error {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+

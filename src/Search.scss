@@ -5,6 +5,7 @@
   border: none;
   background: #fff;
   display: flex;
+  align-items: center;
 }
 
 .search-button {
@@ -22,8 +23,8 @@
 }
 
 .search-icon {
-  width: 40px;
-  margin: 0px 10px;
+  height: 35px;
+  padding: 0px 10px;
 }
 
 .search-input {

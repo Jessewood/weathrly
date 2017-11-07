@@ -15,10 +15,15 @@
   flex-wrap: wrap;
   justify-content: center;
 }
+.ten-card-wrapper .card  {
+  border-radius: 10px;
+  background: rgba(244, 250, 255, .7);
+  margin: 3px;
+}
 
 .ten-day-info-wrapper h2 {
   margin-bottom: 10px;
-  font-size: 30pt;
+  font-size: 26pt;
   font-family: $title-font;
 }
 

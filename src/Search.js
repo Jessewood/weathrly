@@ -53,7 +53,7 @@ export default class Search extends Component {
       <div>
         <div className="search-wrapper">
           <div className="input-wrapper">
-            <img src="../public/if_location_pin.svg" 
+            <img src="../public/location-icon.svg" 
                  className="search-icon" />
             <input className="search-input" 
                    value={this.state.value} 
