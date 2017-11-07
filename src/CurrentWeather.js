@@ -11,7 +11,8 @@ const CurrentWeather = (props) => {
         <img src={props.currentForecast.icon} />
         <div className='current-temp-wrapper'>
         <p className='temp'>{props.currentForecast.temp}°F</p>
-        <p>High: {props.currentForecast.high}°F / Low: {props.currentForecast.low}°F</p>
+        <p>High: {props.currentForecast.high}°F / 
+           Low: {props.currentForecast.low}°F</p>
         </div>
       </div>
       <div className='current-weather-card'>
