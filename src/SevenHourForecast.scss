@@ -1,34 +1,33 @@
 @import 'variable';
 
 .seven-hour-wrapper {
-  width: 50%;
+  background: $card-background-color;
   border-radius: 25px;
-  background: rgba(244, 250, 255, .7);
-  margin: 20px;
-  box-shadow: 2px 5px 15px rgba(100, 100, 100, 0.6);
-  color: rgb(25, 75, 102);
+  box-shadow: $box-shadow;
+  color: $text-color;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  margin: 20px;
+  width: 50%;
 }
 
 .seven-hour-wrapper .card {
-  width: 95%;
   border-bottom: 1px groove;
+  width: 95%;
 }
 
 .card div.hourcard {
-  display: flex;
-  // width: 100%;
-  justify-content: space-around;
-  height: 25px;
   align-items: center;
+  display: flex;
+  height: 25px;
+  justify-content: space-around;
 }
 
 .seven-hour-wrapper .time {
-  width: 100px;
   font-weight: bold;
   text-align: center;
+  width: 100px;
 }
 
 .seven-hour-wrapper .conditions, 
@@ -42,7 +41,6 @@
 
 .seven-hour-wrapper img{
   width: 35px;
-  // height: 30px;
 }
 
 .seven-hour-wrapper .icon {
@@ -50,21 +48,21 @@
 }
 
 .seven-hour-wrapper h2 {
-  text-align: center;
-  font-size: 26pt;
   font-family: $title-font;
+  font-size: 26pt;
+  text-align: center;
   margin-bottom: 10px;
 }
 
 .seven-card-wrapper {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 @media screen and (max-width: 760px) {
   .seven-hour-wrapper {
-    width: 97%;
     margin: 10px;
+    width: 97%;
   }
 }

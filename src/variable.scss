@@ -1,7 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Righteous');
-
 @import url('https://fonts.googleapis.com/css?family=Encode+Sans+Expanded');
+@import url('https://fonts.googleapis.com/css?family=Raleway');
 
 $title-font: 'Righteous', sans-serif;
 $text-font: 'Encode Sans Expanded', sans-serif;
+$footer-font: 'Raleway', sans-serif;
+
 $title-color: #fff;
+$footer-color: #fff;
+$text-color: rgb(25, 75, 102);
+
+$background-image: url('../public/weathrly-welcome.jpg');
+$background-color: rgba(90, 136, 154, 0.8);
+$card-background-color: rgba(244, 250, 255, 0.7);
+$error-background-color: rgba(90, 136, 154, 1);
+$box-shadow: 2px 5px 15px rgba(100, 100, 100, 0.6);
