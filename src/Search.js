@@ -58,7 +58,7 @@ export default class Search extends Component {
             <input className="search-input" 
                    value={this.state.value} 
                    placeholder='Choose a city or zip code...' 
-                   onChange={this.onChange.bind(this)} />
+                   onChange={this.onChange} />
           </div>
           <button className="search-button"
                   disabled={!this.state.value}
